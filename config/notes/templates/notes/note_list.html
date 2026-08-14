@@ -68,7 +68,7 @@
             {% for note in notes %}
             <div class="note">
                 <!-- Вывести заголовок заметки -->
-                <h2>{{ note.title }}</h2>
+                <h2><a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a></h2>
 
                 <!-- Вывести текст заметки -->
                 <p>{{ note.content }}</p>
