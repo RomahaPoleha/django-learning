@@ -1,67 +1,10 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
+{% extends "notes/base.html" %}
+{% block content %}
     <!-- Настройки страницы -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заметки</title>
-
-    <!-- CSS-стили -->
-    <style>
-        /* Стили для всей страницы */
-        body {
-            font-family: Arial, sans-serif;  /* шрифт */
-            margin: 0;                        /* убрать отступы */
-            padding: 20px;                    /* отступ внутри */
-            background-color: #f5f5f5;        /* цвет фона */
-        }
-
-        /* Контейнер для контента */
-        .container {
-            max-width: 800px;      /* максимальная ширина */
-            margin: 0 auto;        /* центрировать */
-        }
-
-        /* Заголовок */
-        h1 {
-            color: #333;           /* цвет текста */
-        }
-
-        /* Одна заметка */
-        .note {
-            background-color: white;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;    /* скруглить углы */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* тень */
-        }
-
-        .note h2 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-
-        .note p {
-            color: #666;
-        }
-
-        .note .date {
-            color: #999;
-            font-size: 0.9em;
-        }
-
-        /* Сообщение, если заметок нет */
-        .empty {
-            text-align: center;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
     <!-- Основной контент -->
     <div class="container">
         <h1>Мои заметки</h1>
-
         <!-- Django: если есть заметки -->
         {% if notes %}
             <!-- Django: цикл по заметкам -->
@@ -84,5 +27,4 @@
             </div>
         {% endif %}
     </div>
-</body>
-</html>
+{% endblock %}
