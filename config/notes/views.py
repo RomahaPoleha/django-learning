@@ -22,3 +22,15 @@ def note_created(request):
         form = NoteForm
     return render(request, 'notes/note_form.html', {'form': form})
 
+
+def note_edit(request,pk):
+    note = get_object_or_404(Note, pk=pk)
+    if request.method == "POST":
+        form = NoteForm(request.POST, instance=note)
+        if form.is_valid():
+            note = form.save()
+            return redirect("note_detail", note.pk)
+    else:
+        form = NoteForm(instance=note)
+    return render(request, "notes/note_edit.html", {"form": form})
+

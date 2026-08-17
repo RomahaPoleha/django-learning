@@ -15,14 +15,15 @@
 
                 <!-- Вывести дату создания -->
                 <div class="date">Создано: {{ note.created_at|date:"d.m.Y H:i" }}</div>
-                <a href="{% url 'note_create' %}">Добавить заметку</a>
+                <a href="{% url 'note_edit' note.pk %}">Редактировать заметку</a>
             </div>
             {% endfor %}
+                <a href="{% url 'note_create' %}">Добавить заметку</a>
         {% else %}
             <!-- Если заметок нет -->
             <div class="empty">
                 <p>Пока нет заметок. Добавьте их через админку.</p>
             </div>
         {% endif %}
-    </div>
+
 {% endblock %}

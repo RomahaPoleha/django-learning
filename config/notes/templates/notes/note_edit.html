@@ -1,0 +1,14 @@
+{% extends "notes/base.html" %}
+<h2>{% block title %}Редактирование {{note.title}}{% endblock %}</h2>
+{% block content %}
+<h2>Редактирование заметки</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить изменения</button>
+</form>
+
+
+
+
+{% endblock %}
