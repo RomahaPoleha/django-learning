@@ -15,6 +15,7 @@
 
                 <!-- Вывести дату создания -->
                 <div class="date">Создано: {{ note.created_at|date:"d.m.Y H:i" }}</div>
+                <a href="{% url 'note_create' %}">Добавить заметку</a>
             </div>
             {% endfor %}
         {% else %}
